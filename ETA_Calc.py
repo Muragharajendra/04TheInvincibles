@@ -4,9 +4,9 @@ import random
 import concurrent.futures
 from pathlib import Path
 
-API_KEY = "BkpCFwCT6rbYi7b7i95UZNwQK1P4QF1M"
-INPUT_FILE = r"Excell_File_Directory"
-OUTPUT_FILE = r"Excell_File_Directory_HasToSave"
+API_KEY = "Tom Tom API key"                        #API key
+INPUT_FILE = r"Excell_File_Directory"              #Excell_File_Directory
+OUTPUT_FILE = r"Excell_File_Directory_HasToSave"   #Excell_File_Directory
 
 def get_traffic_data(row):
     try:
