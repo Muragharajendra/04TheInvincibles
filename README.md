@@ -1,7 +1,6 @@
 # 🚗 04TheInvincibles — ETA Prediction System
 
-A smart travel-time prediction app developed during **QuantumHack25**. This system estimates commute time from **Home to Office** with **accuracy**,
-using machine learning, live traffic data (non-Google), and simulated travel data.
+A smart travel-time prediction app developed during **QuantumHack25**. This system estimates commute time from **Home to Office** and  **Office to Home** with **high accuracy**, using machine learning, live traffic data (non-Google), and simulated travel data.
 
 ---
 
@@ -20,8 +19,9 @@ using machine learning, live traffic data (non-Google), and simulated travel dat
 - 🧪 Simulated ride data using Excel
 - 📍 Random geolocation generation
 - 🧠 ML model trained on time, day, and traffic conditions
-- 🌐 Web app interface to input route and receive ETA
-- 📊 High prediction accuracy (>95%)
+- 🧮 [`ETA_Calc.py`](https://github.com/Muragharajendra/04TheInvincibles/blob/main/ETA_Calc.py): Calculates and appends ETA to all trips for 3-month travel dataset using lat-long, time, and traffic.
+- 📊 [`ETA_Prediction/`](https://github.com/Muragharajendra/04TheInvincibles/tree/main/ETA_Prediction): ML model training & ETA prediction logic
+- 🌐 [`Website_code/`](https://github.com/Muragharajendra/04TheInvincibles/tree/main/Website_code): User-friendly web interface for real-time ETA lookup
 
 ---
 
