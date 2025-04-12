@@ -1,12 +1,12 @@
-import pandas as pd
+ellimport pandas as pd
 import requests
 import random
 import concurrent.futures
 from pathlib import Path
 
 API_KEY = "BkpCFwCT6rbYi7b7i95UZNwQK1P4QF1M"
-INPUT_FILE = r"C:\Users\murag\Downloads\ride_data_with_flags.xlsx"
-OUTPUT_FILE = r"C:\Users\murag\Downloads\ride_data_with_traffic_eta.xlsx"
+INPUT_FILE = r"Excell_File_Directory"
+OUTPUT_FILE = r"Excell_File_Directory_HasToSave"
 
 def get_traffic_data(row):
     try:
