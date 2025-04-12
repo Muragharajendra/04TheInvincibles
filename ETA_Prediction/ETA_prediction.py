@@ -52,7 +52,7 @@ if not matched_rides.empty:
 
     predicted_eta = model.predict(input_features)[0]
     print(f"\n✅ Predicted ETA (Model): {predicted_eta:.2f} minutes")
-    print(f"🕒 Fallback ETA from historical data: {fallback_eta:.2f} minutes")
+   # print(f"🕒 Fallback ETA from historical data: {fallback_eta:.2f} minutes")
 
 else:
     print("\n⚠️ No similar rides found in Excel.")
