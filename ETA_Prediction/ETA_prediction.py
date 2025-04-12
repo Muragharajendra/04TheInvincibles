@@ -8,7 +8,7 @@ model = joblib.load("eta_predictor_model.pkl")
 le_day = joblib.load("le_day.pkl")
 
 # --- Load Excel Dataset ---
-df = pd.read_excel(r"C:\Users\murag\OneDrive\Captures - Copy\Hackathon\ride_data_with_traffic_eta.xlsx")
+df = pd.read_excel(r"Excell_File_Directory")        #Excell_File_Directory
 
 # --- Get Manual User Input ---
 home_lat = float(input("Enter home latitude: "))
