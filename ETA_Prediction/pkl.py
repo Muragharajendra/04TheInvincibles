@@ -6,7 +6,7 @@ from sklearn.metrics import r2_score, mean_absolute_error
 import xgboost as xgb
 
 # --- Load Your Excel ---
-df = pd.read_excel("C:\\Users\\murag\\OneDrive\\Captures - Copy\\Hackathon\\ride_data_with_traffic_eta.xlsx")
+df = pd.read_excel("Excell_File_Directory")               #Excell_File_Directory
 
 
 # --- Encode Day_of_Week ---
