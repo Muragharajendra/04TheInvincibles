@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SMART ETA - Quick Rides</title>
+  <style>
+    :root {
+      --primary-color: #6c5ce7;
+      --secondary-color: #00cec9;
+      --accent-color: #fd79a8;
+      --dark-color: #2d3436;
+      --light-color: #f8f9fa;
+      --text-color: #2d3436;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(-45deg, #f8f9fa, #dfe6e9, #b2bec3, #636e72);
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
+      color: var(--text-color);
+    }
+
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    header.top-header {
+      background-color: rgba(45, 52, 54, 0.9);
+      color: white;
+      padding: 15px 0;
+      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(5px);
+    }
+
+    .header-container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: white;
+      text-decoration: none;
+    }
+
+    .logo span {
+      color: var(--secondary-color);
+    }
+
+    .nav-menu {
+      display: flex;
+      list-style: none;
+    }
+
+    .nav-menu li {
+      margin-left: 30px;
+      position: relative;
+    }
+
+    .nav-menu a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .nav-menu a:hover {
+      color: var(--accent-color);
+    }
+
+    .nav-menu a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -5px;
+      left: 0;
+      background-color: var(--accent-color);
+      transition: width 0.3s;
+    }
+
+    .nav-menu a:hover::after {
+      width: 100%;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      color: white;
+      padding: 100px 20px 60px;
+      text-align: center;
+      position: relative;
+    }
+
+    .hero-title {
+      font-size: 3.5rem;
+      margin-bottom: 20px;
+      position: relative;
+    }
+
+    .hero-subtitle {
+      font-size: 1.5rem;
+      max-width: 700px;
+      margin: 0 auto;
+      font-weight: 300;
+    }
+
+    .form-container {
+      max-width: 800px;
+      background-color: rgba(255, 255, 255, 0.95);
+      margin: -60px auto 50px;
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(5px);
+    }
+
+    .form-title {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 30px;
+      color: var(--dark-color);
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .form-group.full {
+      grid-column: span 2;
+    }
+
+    input,
+    select {
+      padding: 15px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+      background-color: rgba(255, 255, 255, 0.8);
+    }
+
+    input:focus,
+    select:focus {
+      border-color: var(--primary-color);
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(108, 92, 231, 0.2);
+    }
+
+    button[type="submit"] {
+      margin-top: 20px;
+      background: linear-gradient(to right, var(--primary-color), var(--accent-color));
+      color: white;
+      border: none;
+      padding: 15px;
+      font-size: 1.2rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s ease;
+      box-shadow: 0 5px 15px rgba(108, 92, 231, 0.4);
+      width: 100%;
+      grid-column: span 2;
+    }
+
+    button[type="submit"]:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(108, 92, 231, 0.6);
+    }
+
+    .result {
+      text-align: center;
+      margin-top: 30px;
+      font-size: 1.2rem;
+    }
+
+    .result p {
+      margin: 10px 0;
+    }
+  </style>
+</head>
+
+<body>
+  <header class="top-header">
+    <div class="header-container">
+      <a href="#" class="logo">SMART <span>ETA</span></a>
+      <ul class="nav-menu">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Prediction</a></li>
+        <li><a href="#">Data</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <section class="hero">
+    <h1 class="hero-title">🕒 SMART ETA Predictor</h1>
+    <p class="hero-subtitle">Enter your travel details to get an accurate estimate of your commute time</p>
+  </section>
+
+  <div class="form-container">
+    <form method="POST">
+      <div class="form-title">Predict Your ETA</div>
+      <div class="form-grid">
+        <div class="form-group">
+          <label for="home_lat">Home Latitude</label>
+          <input name="home_lat" id="home_lat" required>
+        </div>
+        <div class="form-group">
+          <label for="home_long">Home Longitude</label>
+          <input name="home_long" id="home_long" required>
+        </div>
+        <div class="form-group">
+          <label for="office_lat">Office Latitude</label>
+          <input name="office_lat" id="office_lat" required>
+        </div>
+        <div class="form-group">
+          <label for="office_long">Office Longitude</label>
+          <input name="office_long" id="office_long" required>
+        </div>
+        <div class="form-group">
+          <label for="day_of_week">Day of the Week</label>
+          <select name="day_of_week" id="day_of_week" required>
+            <option value="">Select Day</option>
+            <option>Monday</option>
+            <option>Tuesday</option>
+            <option>Wednesday</option>
+            <option>Thursday</option>
+            <option>Friday</option>
+            <option>Saturday</option>
+            <option>Sunday</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="time_leaving">Departure Time (HH:MM)</label>
+          <input name="time_leaving" id="time_leaving" placeholder="08:30" required>
+        </div>
+        <button type="submit">Predict ETA</button>
+      </div>
+    </form>
+
+    <div class="result">
+      {% if eta_result %}
+        <p>✅ <b>Predicted ETA:</b> {{ eta_result }} minutes</p>
+      {% elif warning %}
+        <p style="color: red;">⚠️ {{ warning }}</p>
+      {% endif %}
+    </div>
+  </div>
+</body>
+</
