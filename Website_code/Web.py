@@ -10,7 +10,7 @@ model = joblib.load("eta_predictor_model.pkl")
 le_day = joblib.load("le_day.pkl")
 
 # Load ride data from Excel
-df = pd.read_excel("ride_data_with_traffic_eta.xlsx")
+df = pd.read_excel("Excell_File_Directory")                                        #Excell_File_Directory
 df['hour'] = pd.to_datetime(df['departure_time'], format='%H:%M:%S').dt.hour
 
 @app.route("/", methods=["GET", "POST"])
